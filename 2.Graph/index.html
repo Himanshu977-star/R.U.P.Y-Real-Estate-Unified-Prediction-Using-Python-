@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charts in Cards</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <div class="card" onclick="showChart('chart6')">India Top Production</div>
+        <div class="card" onclick="showChart('chart1')">Wheat Production</div>
+        <div class="card" onclick="showChart('chart4')">Rice Production</div>
+        <div class="card" onclick="showChart('chart5')">Sugar Production</div>
+        <div class="card" onclick="showChart('chart2')">Agricultural Land</div>
+        <div class="card" onclick="showChart('chart3')">GDP Share</div>  
+    </div>
+
+    <div id="chartContainer">
+        <button id="closeBtn" onclick="closeChart()">Close</button>
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
