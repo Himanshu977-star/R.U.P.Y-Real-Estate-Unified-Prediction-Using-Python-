@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.container {
+  max-width: 1400px;
+  margin: auto;
+  background: whitesmoke;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Center images in the middle */
+.image-section {
+  display: flex;
+  justify-content: center; /* Center images horizontally */
+  align-items: center; /* Align them in the middle */
+  flex-wrap: wrap; /* Allows wrapping if needed */
+  gap: 20px;
+  padding-bottom: 10px;
+}
+
+.image-box {
+  flex: 0 1 auto;
+  width: 34.5%; /* Increased by 15% from 30% */
+  min-width: 280px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Increase size of last two images by 15% */
+.image-box:nth-last-child(2),
+.image-box:last-child {
+  width: 28.75%; /* Increased by 15% from 25% */
+}
+
+.image-box img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Enlarged Image Effect */
+.image-box.enlarged {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.5);
+  z-index: 10;
+  background: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  max-width: 90%;
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 20px;
+  background: red;
+  color: white;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  text-align: center;
+  cursor: pointer;
+  display: none; /* Hidden until enlarged */
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 9;
+}
+
+/* Show overlay and close button when image is enlarged */
+.overlay.active {
+  display: block;
+}
+
+.image-box.enlarged .close-btn {
+  display: block;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 900px) {
+  .image-section {
+      flex-direction: column; /* Stack images vertically on small screens */
+      align-items: center; /* Center them properly */
+  }
+
+  .image-box {
+      width: 90%;
+  }
+}

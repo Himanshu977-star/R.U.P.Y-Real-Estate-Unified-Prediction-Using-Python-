@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Display with Points</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Real Estate Price Analysis</h1>
+
+        <div class="image-section">
+            <div class="image-box">
+                <img src="count vs price_per_sqft.png" alt="Count vs Price Per Sqft">
+                <p><strong>Observation:</strong> This graph shows the relationship between the count of properties and their price per square foot.</p>
+            </div>
+
+            <div class="image-box">
+                <img src="before_hebbal.png" alt="Before Hebbal Analysis" height="300px">
+                <p><strong>Before Hebbal:</strong> here you can see many outliers in total square feet area vs price per square feet of hebbal region.</p>
+            </div>
+
+            <div class="image-box">
+                <img src="after_hebbal.png" alt="After Hebbal Analysis">
+                <p><strong>After Hebbal:</strong> here you can see after cleaning outliers in total square feet area vs price per square feet of hebbal region.</p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const images = document.querySelectorAll(".image-box img");
+    const overlay = document.createElement("div");
+    overlay.classList.add("overlay");
+    document.body.appendChild(overlay);
+
+    images.forEach(img => {
+        const closeButton = document.createElement("button");
+        closeButton.classList.add("close-btn");
+        closeButton.innerHTML = "X";
+        img.parentElement.appendChild(closeButton);
+
+        img.addEventListener("click", function () {
+            this.parentElement.classList.add("enlarged");
+            overlay.classList.add("active");
+        });
+
+        closeButton.addEventListener("click", function (event) {
+            event.stopPropagation(); // Prevents overlay from closing instantly
+            this.parentElement.classList.remove("enlarged");
+            overlay.classList.remove("active");
+        });
+    });
+
+    overlay.addEventListener("click", function () {
+        document.querySelector(".enlarged")?.classList.remove("enlarged");
+        overlay.classList.remove("active");
+    });
+});
+
+</script>
+</html>
