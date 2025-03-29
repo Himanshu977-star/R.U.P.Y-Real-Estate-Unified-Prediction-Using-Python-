@@ -1,27 +1,34 @@
 # Real Estate Price Prediction
 
 ## Overview
-This project is a **Real Estate Price Prediction** system that uses **Machine Learning** to estimate home prices based on user inputs. It includes a **trained Linear Regression model**, a **Flask API**, and a **web-based frontend** for user interaction.
+This project is a **Real Estate Price Prediction System** that uses **Machine Learning** to estimate home prices based on user inputs. It includes a **trained Linear Regression model**, a **Flask API**, and a **web-based frontend** for user interaction. The model is trained using a dataset of Bangalore home prices, and it predicts property values based on features like square footage, number of bedrooms, and location.
 
 ## Features
-- Data preprocessing, feature engineering, and outlier removal  
-- Machine learning model using **Scikit-learn**  
-- Hyperparameter tuning with **GridSearchCV** and **K-Fold Cross Validation**  
-- Flask API for serving real-time price predictions  
-- Web-based frontend using **HTML, CSS, and JavaScript**  
+- **Data Preprocessing** – Cleaning, handling missing values, and removing outliers  
+- **Feature Engineering** – Dimensionality reduction and categorical encoding  
+- **Model Training** – Linear Regression with **Scikit-learn**, optimized using **GridSearchCV**  
+- **Model Evaluation** – Performance testing using **K-Fold Cross Validation**  
+- **Flask API** – Serves predictions in real-time  
+- **Interactive Web Interface** – Built using **HTML, CSS, and JavaScript**  
+- **Scalable & Extendable** – Can be improved with more ML models and cloud integration  
 
 ## Technologies Used
-- **Python** (Pandas, NumPy, Matplotlib, Scikit-learn)  
-- **Flask** (for API development)  
-- **HTML, CSS, JavaScript** (for frontend)  
-- **Jupyter Notebook, VS Code, PyCharm** (for development)  
+- **Python** – Core language for data processing and model building  
+- **Pandas & NumPy** – Data cleaning and manipulation  
+- **Matplotlib & Seaborn** – Data visualization and analysis  
+- **Scikit-learn** – Machine learning model training and evaluation  
+- **Flask** – API for model integration  
+- **HTML, CSS, JavaScript** – Frontend for user interaction  
+- **Jupyter Notebook, VS Code, PyCharm** – Development environments  
 
+## Dataset
+The model is trained on a **Bangalore home prices dataset** sourced from Kaggle. It includes features such as:  
+- **Total square feet area**  
+- **Number of bedrooms & bathrooms**  
+- **Location of the property**  
+- **Price per square foot**  
+  
 ## Usage
 1. Enter property details (**square feet, number of bedrooms, etc.**).  
 2. Click the **Predict** button to fetch results from the **Flask API**.  
 3. View the **estimated price instantly**.  
-
-## Future Enhancements
-- Support for **advanced ML models** (**Random Forest, XGBoost**).  
-- **Cloud deployment** for scalability.  
-- **Dynamic dataset updates** for real-time predictions.  
